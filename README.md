@@ -1,6 +1,3 @@
-Oczywiście, oto zawartość pliku README.md w formacie, który działa na GitHubie:
-
-```markdown
 # My Project
 
 ## Wymagania
@@ -94,5 +91,3 @@ DB_PASSWORD=your_password
 - `resources/` - zasoby Vue.js
 - `database/` - migracje i seedy bazy danych
 ```
-
-Możesz teraz skopiować ten tekst i wkleić go do pliku README.md w swoim repozytorium na GitHubie. Jeśli potrzebujesz dodatkowej pomocy, daj mi znać!
