@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Imports\ProductsImport;
 use App\Models\Listing;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,5 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Listing:: factory(20)->create();
+
+        $this->call(ProductsTableSeeder::class);
     }
 }
