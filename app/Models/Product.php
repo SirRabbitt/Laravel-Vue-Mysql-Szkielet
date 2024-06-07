@@ -21,4 +21,5 @@ class Product extends Model
         'packaging_type',
         'purchase_units',
     ];
+    
 }

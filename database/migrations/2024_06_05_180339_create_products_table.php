@@ -19,8 +19,11 @@ class CreateProductsTable extends Migration
             $table->float('height')->nullable();
             $table->float('thickness')->nullable();
             $table->string('packaging_type')->nullable();
-            $table->float('purchase_units_nuber')->nullable();
+            $table->float('purchase_units_number')->nullable();
             $table->string('purchase_units_type')->nullable();
+            $table->unsignedBigInteger('purchase_unit_id')->nullable(); // Dodaj kolumnę purchase_unit_id
+
+           // Ustawienie klucza obcego
         });
     }
 

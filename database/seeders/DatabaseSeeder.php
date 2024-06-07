@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'is_admin' => true
         ]);
 
-        Listing:: factory(20)->create();
+        
 
         $this->call(ProductsTableSeeder::class);
     }

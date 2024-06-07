@@ -55,7 +55,7 @@
             :href="route('login')"
             class="text-sm text-gray-500"
           >
-            Already have an account? Click here
+            Masz juz konto?
           </Link>
         </div>
         </div>
