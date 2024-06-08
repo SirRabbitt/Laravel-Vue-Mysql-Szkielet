@@ -1,0 +1,80 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-BPQyGxsT.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/Pages/Listing/Index/Components/filters.vue": {
+    "file": "assets/filters-lUFKz4dk.js",
+    "name": "filters",
+    "src": "resources/js/Pages/Listing/Index/Components/filters.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/Listing/Index/Components/pagination.vue": {
+    "file": "assets/pagination-De7Hpnk1.js",
+    "name": "pagination",
+    "src": "resources/js/Pages/Listing/Index/Components/pagination.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/Listing/index.vue": {
+    "file": "assets/index-C3Xc2eCn.js",
+    "name": "index",
+    "src": "resources/js/Pages/Listing/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "resources/js/Pages/Listing/Index/Components/pagination.vue",
+      "resources/js/Pages/Listing/Index/Components/filters.vue"
+    ]
+  },
+  "resources/js/Pages/Listing/show.vue": {
+    "file": "assets/show-CUGiLSRq.js",
+    "name": "show",
+    "src": "resources/js/Pages/Listing/show.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/auth/login.vue": {
+    "file": "assets/login-C1O3FXTd.js",
+    "name": "login",
+    "src": "resources/js/Pages/auth/login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/userAccount/create.vue": {
+    "file": "assets/create-BDelqbXZ.js",
+    "name": "create",
+    "src": "resources/js/Pages/userAccount/create.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BtwkhbaL.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Listing/Index/Components/filters.vue",
+      "resources/js/Pages/Listing/Index/Components/pagination.vue",
+      "resources/js/Pages/Listing/index.vue",
+      "resources/js/Pages/Listing/show.vue",
+      "resources/js/Pages/auth/login.vue",
+      "resources/js/Pages/userAccount/create.vue"
+    ],
+    "css": [
+      "assets/app-CrFeCOIW.css"
+    ]
+  }
+}
