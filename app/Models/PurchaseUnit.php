@@ -1,17 +1,14 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Listing extends Model
+class PurchaseUnit extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'beds', 'baths', 'area', 'city', 'code', 'street', 'street_nr', 'price'
-    ];
-   
 
+    protected $fillable = [
+        'product_id', 'name', 'manufacturer', 'total_units', 'packaging_type'
+    ];
 }
