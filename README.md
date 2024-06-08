@@ -13,20 +13,6 @@ https://zadanierekrutacyjne.site/
 - Laravel 11
 - MySQL
 
-## Instalacja
-
-1. Sklonuj repozytorium:
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
-   ```
-
-2. Skopiuj plik .env.example do .env:
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Zaktualizuj plik .env zgodnie z wymaganiami.
 
 
 ## Uruchamianie aplikacji
