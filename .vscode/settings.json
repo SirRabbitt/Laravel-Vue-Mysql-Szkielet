@@ -1,0 +1,12 @@
+{
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact", // Poprawienie błędnej nazwy
+      "vue"
+    ],
+    "eslint.format.enable": true, // Poprawienie klucza na właściwy
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  }
+  
