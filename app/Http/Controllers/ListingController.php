@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\PurchaseUnit;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,9 +19,8 @@ class ListingController extends Controller
             return redirect()->route('login');
         }
 
-
         $filters = $request->only(['name', 'manufacturer', 'perPage']);
-        $query = PurchaseUnit::orderBy('name');
+        $query = Product::orderBy('name');
 
         if ($filters['name'] ?? false) {
             $query->where('name', 'LIKE',  $filters['name'] . '%');
@@ -34,28 +32,13 @@ class ListingController extends Controller
 
         $perPage = $filters['perPage'] ?? 20;
 
-        $purchaseUnits = $query->paginate($perPage)->withQueryString();
-
-        
-        $purchaseUnits->getCollection()->transform(function($unit) {
-            if ($unit->purchase_units_type === 'szt') {
-                $unit->total_units = ceil($unit->total_units / 400);
-                $unit->purchase_units_type = 'pełna paleta';
-            } elseif ($unit->purchase_units_type === 'paczka') {
-                $unit->total_units = ceil($unit->total_units / 2);
-                $unit->purchase_units_type = 'pełna paleta';
-            }if ($unit->total_units >= 2) {
-                $unit->purchase_units_type = 'pełne palety';
-            }
-            
-            return $unit;
-        });
+        $products = $query->paginate($perPage)->withQueryString();
 
         return inertia(
             'Listing/index',
             [
                 'filters' => $filters,
-                'listings' => $purchaseUnits
+                'listings' => $products
             ]
         );
     }
@@ -65,7 +48,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-    
+        // Implementacja formularza tworzenia nowego produktu
     }
 
     /**
@@ -73,52 +56,50 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-       
+        // Implementacja przechowywania nowego produktu
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($purchase_unit_id)
-
+    public function show($id)
     {
-      
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        
-        $products = Product::where('purchase_unit_id', $purchase_unit_id)->get();
-        
-       
-        $purchaseUnit = PurchaseUnit::find($purchase_unit_id);
-    
+
+        $product = Product::find($id);
+
+        if (!$product) {
+            return redirect()->route('products.index')->withErrors(['Product not found']);
+        }
+
         return inertia('Listing/show', [
-            'products' => $products,
-            'purchaseUnit' => $purchaseUnit
+            'product' => $product
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $listing)
+    public function edit(Product $product)
     {
-       
+        // Implementacja formularza edycji produktu
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $listing)
+    public function update(Request $request, Product $product)
     {
-       
+        // Implementacja aktualizacji produktu
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $listing)
+    public function destroy(Product $product)
     {
-      
+        // Implementacja usuwania produktu
     }
 }
